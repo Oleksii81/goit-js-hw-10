@@ -14,7 +14,7 @@ const options = {
 
 export function fetchBreeds() {
     hideSelect();
-    const url = `https://api.thecatapi.com/v1/breeds`;
+    const url = 'https://api.thecatapi.com/v1/breeds';
     return fetch(url, options).then(response => {
         if(!response.ok) {
             throw new Error(response.statusText);

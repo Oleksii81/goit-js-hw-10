@@ -4,7 +4,7 @@ import { disableLoading, enableLoading } from './loader.js';
 import { marckupCard, selectOptions } from './markup.js';
 
 const select = document.querySelector('.breed-select');
-const catInfoBlock = document.querySelector('.cat-info');
+const catInfo = document.querySelector('.cat-info');
 const errorText = document.querySelector('.error');
 
 select.addEventListener('change', onBreedSelect);
@@ -34,10 +34,10 @@ fetchBreeds()
           .then(marckupCard)
           .catch(error => {
             if (error) {
-              catInfo.classList.add('is-hidden');
+                catInfo.classList.add('is-hidden');
               disableLoading();
-              Notify.failure('Oops! Something went wrong! Try reloading the page!', {
-                width: '400px',
+              Notiflix.Notify.failure('Oops! Something went wrong! Try reloading the page!', {
+                width: '500px',
                 borderRadius: '10px',
                 position: 'center-center',
               });
