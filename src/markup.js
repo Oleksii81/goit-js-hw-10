@@ -13,7 +13,7 @@ export function selectOptions(cat) {
     disableLoading();
   }
 
-export function marckupCard(breeds) {
+export function markupCard(breeds) {
     const breedInfo = breeds[0].breeds[0];
     catInfo.classList.remove('is-hidden');
     const card = breeds
@@ -22,13 +22,13 @@ export function marckupCard(breeds) {
             <img src="${breed.url}", alt="${breedInfo.name}" width="500">
             </div>
             <div class="description">
-            <h2>${breedInfo.name}</h2>
-            <p>${breedInfo.description}</p>
-            <p><b>Temperament:<b/>${breedInfo.temperament}</p>
+            <h2 class="name">${breedInfo.name}</h2>
+            <p class="breed-info">${breedInfo.description}</p>
+            <p class="temperament"><b>Temperament:<b/>${breedInfo.temperament}</p>
           </div>
           `;
         })
-        join('');
+        .join('');
 
         catInfo.innerHTML = card;
         disableLoading();
